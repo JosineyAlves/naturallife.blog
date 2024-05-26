@@ -86,34 +86,41 @@ body {
     }
     .nyt-nav ul {
         display: none;
+        /* Inicialmente escondido */
         flex-direction: column;
         width: 100%;
         position: absolute;
         left: 0;
-        background-color: #000;
-        top: 60px;
+        background-color: #fff;
+        /* Cor de fundo alterada para branco */
+        top: 90px;
+        /* Espaçamento aumentado para não sobrepor a data */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* Sombra para destacar o menu */
+        border-top: 2px solid #ccc;
+        /* Bordas mais destacadas */
+        z-index: 1000;
+        /* Garante que o menu fique sobre outros elementos */
+    }
+    .nyt-nav.active ul {
+        display: flex;
+        /* Mostrar quando ativo */
     }
     .nyt-nav li {
-        text-align: center;
+        text-align: left;
         width: 100%;
+        padding: 10px 0 5px 30px;
+        /* Adiciona padding para mais espaço entre os itens */
     }
     .date {
         align-self: center;
-        /* Centraliza a data */
         order: 2;
         margin-left: 0;
-        /* Remove margem adicional no mobile */
         background-color: #f2f2f2;
-        /* Cor de fundo suave */
         width: 100%;
-        /* Garante que o fundo ocupe a largura total */
         padding: 10px 0 10px 30px;
-        /* Adiciona um pouco de padding vertical para espaço */
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        /* Sombra leve para destaque */
         border-top: 1px solid #ccc;
-        /* Linha sutil na parte superior */
         border-bottom: 1px solid #ccc;
-        /* Linha sutil na parte inferior */
     }
 }
