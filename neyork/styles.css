@@ -128,3 +128,90 @@ body {
         border-bottom: 1px solid #ccc;
     }
 }
+
+.post-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.post {
+    width: 30%;
+    /* Cada postagem ocupa cerca de um terço da largura do container */
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.post h3 {
+    margin-top: 10px;
+    color: #333;
+}
+
+.post p {
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .post-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .post {
+        width: 90%;
+        /* No mobile, cada postagem ocupa mais espaço */
+    }
+}
+
+.featured-post {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 30px;
+    /* Espaço entre a postagem destacada e as outras postagens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    /* Organiza os filhos em coluna */
+    align-items: center;
+    /* Centraliza os itens horizontalmente */
+}
+
+.featured-post img {
+    width: 40%;
+    /* Ajuste de largura para a imagem */
+    height: auto;
+    border-radius: 5px;
+    margin-top: 20px;
+    /* Espaço após o título */
+}
+
+.featured-post h2 {
+    font-size: 24px;
+    color: #333;
+    width: 100%;
+    /* Título ocupa a largura total */
+    text-align: center;
+    /* Título centralizado */
+}
+
+.featured-post p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 16px;
+    width: 80%;
+    /* Texto não ocupa toda a largura para melhor legibilidade */
+    text-align: justify;
+    /* Justifica o texto */
+    margin-top: 20px;
+    /* Espaço após a imagem */
+}
