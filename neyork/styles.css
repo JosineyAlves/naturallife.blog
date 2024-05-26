@@ -216,6 +216,12 @@ body {
     /* Espaço após a imagem */
 }
 
+@media (max-width: 768px) {
+    .featured-post img {
+        width: 100%;
+    }
+}
+
 
 /* Para todas as imagens dentro de postagens */
 
