@@ -246,8 +246,15 @@ body {
 
 .separator {
     border: 0;
-    height: 2px;
+    height: 1px;
     background-color: #121212;
     width: 100%;
     margin: 20px 0;
+}
+
+.news {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
