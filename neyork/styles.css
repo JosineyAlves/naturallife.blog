@@ -221,12 +221,18 @@ body {
 
 .post img,
 .featured-post img {
-    width: 100%;
-    /* Faz a imagem preencher a largura do contêiner */
     max-width: 100%;
     /* Garante que a imagem não ultrapasse o contêiner */
     height: auto;
     /* Mantém a proporção da imagem */
     border-radius: 5px;
     /* Mantém o design arredondado */
+}
+
+.separator {
+    border: 0;
+    height: 2px;
+    background-color: #121212;
+    width: 100%;
+    margin: 20px 0;
 }
