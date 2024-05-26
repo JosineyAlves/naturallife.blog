@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    /* Centraliza o contêiner principal horizontalmente */
+}
+
+.container {
+    width: 100%;
+    /* Ocupa 100% da largura até o limite máximo */
+    max-width: 1200px;
+    /* Limite máximo para desktop */
+    min-height: 100vh;
+    /* Garante que o contêiner tenha pelo menos a altura da tela */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nyt-header {
+    background-color: #ffffff;
+    color: #121212;
+    padding: 10px;
+    width: 100%;
+    /* Garante que o cabeçalho ocupe toda a largura do contêiner */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.date {
+    font-size: 12px;
+    align-self: flex-start;
+}
+
+.nyt-logo img {
+    height: 90px;
+    width: auto;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #121212;
+    font-size: 25px;
+}
+
+.nyt-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.nyt-nav li {
+    padding: 0 15px;
+}
+
+.nyt-nav a {
+    text-decoration: none;
+    color: #121212;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .nyt-header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+    .nyt-logo img {
+        height: 45px;
+    }
+    .nyt-nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        background-color: #000;
+        top: 60px;
+    }
+    .nyt-nav li {
+        text-align: center;
+        width: 100%;
+    }
+    .date {
+        align-self: center;
+        /* Centraliza a data */
+        order: 2;
+        margin-left: 0;
+        /* Remove margem adicional no mobile */
+        background-color: #f2f2f2;
+        /* Cor de fundo suave */
+        width: 100%;
+        /* Garante que o fundo ocupe a largura total */
+        padding: 10px 0 10px 30px;
+        /* Adiciona um pouco de padding vertical para espaço */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        /* Sombra leve para destaque */
+        border-top: 1px solid #ccc;
+        /* Linha sutil na parte superior */
+        border-bottom: 1px solid #ccc;
+        /* Linha sutil na parte inferior */
+    }
+}
