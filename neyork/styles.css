@@ -204,6 +204,15 @@ body {
     /* Título centralizado */
 }
 
+.featured-post h3 {
+    font-size: 12px;
+    color: #666;
+    width: 80%;
+    /* Título ocupa a largura total */
+    text-align: justify;
+    /* Título centralizado */
+}
+
 .featured-post p {
     color: #666;
     line-height: 1.6;
