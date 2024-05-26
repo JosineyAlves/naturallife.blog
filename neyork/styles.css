@@ -18,6 +18,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 20px;
+    /* Adiciona espaçamento lateral */
+    box-sizing: border-box;
+    /* Garante que o padding não adicione largura ao contêiner */
 }
 
 .nyt-header {
@@ -109,7 +113,7 @@ body {
     .nyt-nav li {
         text-align: left;
         width: 100%;
-        padding: 10px 0 5px 30px;
+        padding: 10px 0;
         /* Adiciona padding para mais espaço entre os itens */
     }
     .date {
