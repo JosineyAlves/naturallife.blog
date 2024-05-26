@@ -215,3 +215,18 @@ body {
     margin-top: 20px;
     /* Espaço após a imagem */
 }
+
+
+/* Para todas as imagens dentro de postagens */
+
+.post img,
+.featured-post img {
+    width: 100%;
+    /* Faz a imagem preencher a largura do contêiner */
+    max-width: 100%;
+    /* Garante que a imagem não ultrapasse o contêiner */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    border-radius: 5px;
+    /* Mantém o design arredondado */
+}
