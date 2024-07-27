@@ -69,29 +69,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            let counterElement = document.getElementById('counter');
-            let count = 52;
-
-            function decreaseCounter() {
-                if (count > 0) {
-                    let decrement = Math.floor(Math.random() * 4) + 1; // Entre 1 e 4
-                    let delay = Math.floor(Math.random() * 11000) + 10000; // Entre 10,000ms (10s) e 20,000ms (20s)
-                    
-                    count -= decrement;
-                    if (count < 0) count = 0; // Evitar contador negativo
-
-                    counterElement.textContent = count;
-
-                    setTimeout(decreaseCounter, delay);
-                }
-            }
-
-            setTimeout(decreaseCounter, 30000); // Começar após 30,000ms (30s)
-        });
-    </script>
-
 </body>
 
 </html>
