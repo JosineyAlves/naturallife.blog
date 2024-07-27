@@ -36,7 +36,7 @@ body {
 img {
     width: 70%;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: none;
 }
 
 .img_header {
@@ -90,10 +90,11 @@ img {
 
 .titulo_principal {
     color: #CF0000;
-    font-size: 65px;
+    font-size: 35px;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: bold;
     padding: 20px 0 0;
+    font-weight: bold;
     text-transform: uppercase;
 }
 
@@ -110,11 +111,12 @@ img {
     }
 
     .titulo_principal {
-        font-size: 40px;
+        font-size: 28px;
     }
 
     .subtitulo {
         font-size: 22px !important;
+
     }
 
     img {
