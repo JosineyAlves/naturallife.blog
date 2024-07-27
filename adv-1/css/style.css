@@ -61,11 +61,11 @@ img {
     padding: 10px 20px;
     font-size: 20px;
     color: #1b1b1b;
-    border: 2px solid #fffb00; /* Borda sutil da mesma cor do fundo */
+    border: 2px solid #e4c112; /* Borda sutil da mesma cor do fundo */
     border-radius: 20px;
     text-decoration: none;
     cursor: pointer;
-    background: #fffb00;
+    background: #FFD814;
     font-weight: bold;
     text-transform: uppercase;
     animation: pulse 1.5s infinite; /* Aumenta a velocidade da animação */
