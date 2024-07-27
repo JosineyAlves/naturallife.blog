@@ -51,7 +51,7 @@ img {
 }
 
 .container {
-    width: 80%;
+    width: 60%;
     margin: auto;
     overflow: hidden;
 }
@@ -59,22 +59,36 @@ img {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    font-size: 20px;
-    color: #fff;
-    border: none;
+    font-size: 22px;
+    color: #1b1b1b;
+    border: 2px solid #fffb00; /* Borda sutil da mesma cor do fundo */
     border-radius: 20px;
     text-decoration: none;
     cursor: pointer;
-    background: #00c400;
-    color: white;
-    font-weight: bolder;
+    background: #fffb00;
+    font-weight: bold;
     text-transform: uppercase;
+    animation: pulse 1.5s infinite; /* Aumenta a velocidade da animação */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08); /* Aumenta a escala um pouco mais */
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .button:hover {
-    transform: scale(1.05);
-    transform: .2s linear;
+    transform: scale(1.15); /* Aumenta ainda mais ao passar o mouse */
+    transition: transform .2s linear;
 }
+
 
 .img-container {
     text-align: center;
@@ -116,7 +130,7 @@ img {
     }
 
     .titulo_principal {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .subtitulo {
