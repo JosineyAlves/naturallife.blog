@@ -59,7 +59,7 @@ img {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    font-size: 22px;
+    font-size: 20px;
     color: #1b1b1b;
     border: 2px solid #fffb00; /* Borda sutil da mesma cor do fundo */
     border-radius: 20px;
