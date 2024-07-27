@@ -65,7 +65,7 @@ img {
     border-radius: 20px;
     text-decoration: none;
     cursor: pointer;
-    background: #00ff00;
+    background: #00c400;
     color: white;
     font-weight: bolder;
     text-transform: uppercase;
@@ -89,7 +89,7 @@ img {
 }
 
 .titulo_principal {
-    color: red;
+    color: #CF0000;
     font-size: 65px;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: bold;
@@ -141,4 +141,62 @@ img {
         color: gray;
         font-size: 25px;
     }
+}
+footer {
+    background-color: #111111;
+    color: #bebebe;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 200;
+
+}
+
+.footer-content {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer a {
+    color: #bebebe;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.social-icons {
+    text-align: left;
+    padding-top: 10px;
+}
+
+.social-icon {
+    color: #bebebe;
+    margin: 0 5px;
+    font-size: 24px;
+}
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-content {
+        flex-direction: column;
+    }
+    .social-icons {
+        order: -1;
+        padding-bottom: 10px;
+    }
+    .footer-links {
+        align-items: center;
+    }
+    
 }
