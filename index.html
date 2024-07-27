@@ -1,270 +1,97 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natural Life</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="preload" href="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/668aebef4cfc45000a5b8e42/player.js" as="script">
-    <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
-    <link rel="preload" href="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/668aebef4cfc45000a5b8e42/thumbnail.jpg" as="image">
-    <link rel="preload" href="https://cdn.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/668aeb2b91fde7000a84a593/main.m3u8" as="fetch">
-    <link rel="dns-prefetch" href="https://cdn.converteai.net">
-    <link rel="dns-prefetch" href="https://scripts.converteai.net">
-    <link rel="dns-prefetch" href="https://images.converteai.net">
-    <link rel="dns-prefetch" href="https://api.vturb.com.br">
-    <style>
-      body {
-      font-family: 'Roboto', serif;
-      background-color: #1F1F1F;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      margin: 0;
-      }
-      .container {
-      width: 80%;
-      max-width: 800px;
-      text-align: center;
-      margin-bottom: 40px;
-      }
-      .acessos {
-      max-width: 800px;
-      font-size: 18px;
-      color: #fff;
-      display: flex;
-      align-items: baseline;
-      margin-top: 5px;
-      font-weight: bold;
-      }
-      .label-acessos {
-      margin-right: 5px;
-      }
-      .live-indicator {
-    width: 10px;
-    height: 10px;
-    background-color: red;
-    border-radius: 50%;
-    margin-left: 5px;
-    animation: blink-animation 1s steps(5, start) infinite;
-      }
-      @keyframes blink-animation {
-      50% { opacity: 0; }
-      }
-      .contador {
-      font-size: 16px;
-      color: #fff;
-      transition: color 0.3s ease;
-      font-weight: 700;
-      }
-      .mensagem {
-      font-size: 16px;
-      opacity: 0;
-      color: #fff;
-      background-color: #D0021B;
-      padding: 5px 15px;
-      margin-top: 3px;
-      margin-bottom: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      line-height: 1.2;
-      text-align: center;
-      }
-      .references-container {
-      width: 100%;
-      background-color: #fff;
-      padding: 0;
-      color: #1F1F1F;
-      text-align: center;
-      }
-      .references {
-      width: 95%;
-      max-width: 800px;
-      margin: 0 auto;
-      }
-      .references h2 {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      }
-      .references .images {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      }
-      .references .images img {
-      max-width: 100%;
-      height: auto;
-      }
-      .study-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      }
-      .study-list .column {
-      flex: 1;
-      min-width: 250px;
-      max-width: 400px;
-      box-sizing: border-box;
-      padding: 0 10px;
-      }
-      .study-list li {
-      color: #929292;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 10px;
-      text-align: left;
-      font-size: 12px;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      word-break: break-word; /* Ensures long words break within the column */
-      }
-      footer {
-      width: 100%;
-      background-color: #F7F7F7;
-      padding: 40px 0;
-      color: #929292;
-      }
-      .footer-content {
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      font-size: 12px;
-      }
-      .footer-content a {
-      color: #929292;
-      text-decoration: none;
-      margin: 0 5px;
-      }
-      .footer-content p {
-      margin: 10px 0;
-      }
-      /* Media queries for smaller devices */
-      @media (max-width: 600px) {
-      .container, .footer-content, .references {
-      width: 95%;
-      max-width: none;
-      }
-      body {
-      padding-top: 20px;
-      }
-      .references .images {
-      flex-direction: column;
-      align-items: center;
-      }
-      .study-list {
-      flex-direction: column; /* Stack columns vertically */
-      }
-      .study-list .column {
-      min-width: 100%; /* Ensure columns take full width */
-      padding: 0;
-      }
-      }
-    </style>
-        <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-MX35NJ2W');</script>
-  <!-- End Google Tag Manager -->
-  </head>
-  <body>
-        <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX35NJ2W"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-    <div class="acessos">
-      <span class="label-acessos">Live Views:</span>
-      <div id="contador" class="contador">487</div>
-      <div id="live-indicator" class="live-indicator"></div> <!-- Novo círculo indicador -->
+    <title>News</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+</head>
+<body>
+    <img src="img/header.png" class="img_header">
+    <div class="img_header_mobile">
+        <i class="fa-solid fa-bars"></i>
+        <div class="logo">
+            <svg role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 122">
+      <title id="logo-title">TMZ</title>
+      <path fill="#cf1100" d="M129.91 0a4.11 4.11 0 0 1 0 8.22H97.65l.018.058c-.223 0-14.53-1.408-15.112 11.06v88.607c0 7.106-7.537 13.94-14.643 13.94h-1.702c-7.106 0-14.747-6.834-14.747-13.94V20.273l-.016.002C51.563 6.793 36.54 8.278 36.312 8.278l.018-.057H4.11A4.11 4.11 0 0 1 4.11 0h125.8zm71.72 24.135c7.105 0 12.865 5.761 12.865 12.868v70.771c0 7.106-4.688 13.94-11.793 13.94h-3.082c-7.105 0-12.963-5.707-12.828-13.94l-.014-28.885c.015-4.773-1.35-7.502-5.59-7.502-3.685 0-4.766 2.326-6.095 4.273l-3.01 5.967-17.748 35.18c-2.74 4.907-6.473 5.625-8.676 4.524-.074-.037-.14-.086-.209-.13-1.126-.333-2.495-1.646-4.342-4.394 0 0-18.684-35.19-22.485-41.778-3.802-6.587-12.416-3.778-12.416 4.78v35.807a6.099 6.099 0 1 1-12.195 0v-78.59c0-6.01 2.527-11.42 7.274-14.058 4.653-2.586 15.683-5.183 21.41 5.456l20.358 39.353c1.83 3.2 5.367 9.367 6.442 11.114 1.768 2.874 6.773 9.746 11.123 1.54 3.525-6.65 8.125-15.513 10.841-20.761l13.43-26.896a13.539 13.539 0 0 1 1.722-2.644c2.281-3.599 6.288-5.995 10.864-5.995h4.154zm94.583 89c2.09 0 3.787 1.86 3.787 4.156 0 2.295-1.696 4.155-3.787 4.155h-54.595c-7.053-.026-15.416.293-17.846-2.949-4.44-5.922.5-15.233 2.317-18.867 1.023-2.047 2.257-4.495 3.269-6.503l25.592-55.685.11-1.155v-.078a4.734 4.734 0 0 0-3.839-4.568h-24.63c-2.09 0-3.786-1.86-3.786-4.155s1.696-4.155 3.787-4.155h61.58c2.09 0 3.787 1.86 3.787 4.155 0 .464-.086.902-.214 1.319.005.01.026.02.023.031-.007.023-.04.09-.081.178-.12.33-.279.635-.467.918-1.742 3.364-7.118 13.44-8.497 16.02 0 0-20.588 44.921-22.764 49.573-2.177 4.651-3.917 10.51-3.025 12.59.892 2.082 2.08 4.981 8.694 4.981.44 0 .845.015 1.228.04h29.357z"></path>
+    </svg>
+        </div>
+        <i class="fa-solid fa-magnifying-glass"></i>
     </div>
-    <div id="mensagem" class="mensagem"></div>
+    
     <div class="container">
-        <!-- VTurb -->
-<div id="vid_668aebef4cfc45000a5b8e42" style="position:relative;width:100%;padding: 56.25% 0 0;"> <img id="thumb_668aebef4cfc45000a5b8e42" src="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/668aebef4cfc45000a5b8e42/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"> <div id="backdrop_668aebef4cfc45000a5b8e42" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div> </div> <script type="text/javascript" id="scr_668aebef4cfc45000a5b8e42"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/668aebef4cfc45000a5b8e42/player.js", s.async=!0,document.head.appendChild(s); </script> <style> .elementor-element:has(#smartplayer) { width: 100%; } </style>      </div>     
-      <!-- VTurb -->
-    <div class="references-container">
-      <div class="references">
-        <h2>Scientific References</h2>
-        <div class="images">
-          <img src="https://i.imgur.com/TdQJnkk.png" alt="Reference 1">
+        <h1 class="titulo_principal">"Turmeric Trick" from Japanese Influencers!</h1>
+        <p class="subtitulo">Japanese Secret Helps American Women Shed 15lbs in 4 Weeks!</p>
+        <i style="font-size: 20px;"><u>Learn the recipe now...</u></i><br><br>
+        <div class="img-container">
+            <a href="meulink">
+                <img src="img/img-01.gif" alt="image">
+            </a>
         </div>
-        <div class="study-list">
-          <div class="column">
-            <ol>
-              <li><b>1. Heart attack warning - the simple test YOU can do at home to reveal your risk</b> https://www.express.co.uk/life-style/health/995242/heart-attack-test-exercise-risk-symptoms-blood-stretch</li>
-              <li><b>2. Magnesium and the inflammatory response: potential physiopathological implications</b> https://www.ncbi.nlm.nih.gov/pubmed/16712775?dopt=Abstract</li>
-              <li><b>3. Low blood mononuclear cell magnesium in intensive cardiac care unit patients</b> https://www.ncbi.nlm.nih.gov/pubmed/3953355?dopt=Abstract</li>
-              <li><b>4. Low Magnesium Linked To Heart Disease</b> https://www.medicalnewstoday.com/articles/255783.php</li>
-              <li><b>5. L-arginine</b> https://www.mayoclinic.org/drugs-supplements-l-arginine/art-20364681</li>
-              <li><b>6. Role of the general base Glu-268 in nitroglycerin bioactivation and superoxide formation by aldehyde dehydrogenase-2</b> https://www.ncbi.nlm.nih.gov/pubmed/19506075</li>
-            </ol>
-          </div>
-          <div class="column">
-            <ol start="7">
-              <li><b>7. Coenzyme Q10 for the treatment of heart failure: a review of the literature</b> https://openheart.bmj.com/content/2/1/e000326</li>
-              <li><b>8. The effect of coenzyme Q10 on morbidity and mortality in chronic heart failure: results from Q-SYMBIO: a randomized double-blind trial</b> https://www.ncbi.nlm.nih.gov/pubmed/25282031</li>
-              <li><b>9. Nattokinase: A Promising Alternative in Prevention and Treatment of Cardiovascular Diseases</b> https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6043915/</li>
-              <li><b>10. Dietary soy and natto intake and cardiovascular disease mortality in Japanese adults: the Takayama study</b> https://www.ncbi.nlm.nih.gov/pubmed/27927636/</li>
-              <li><b>11. Increasing severity of erectile dysfunction is a marker for increasing risk of cardiovascular disease and death</b> https://www.sciencedaily.com/releases/2013/01/130129130945.htm</li>
-              <li><b>12. Dietary intake of menaquinone is associated with a reduced risk of coronary heart disease: the Rotterdam Study</b> https://pubmed.ncbi.nlm.nih.gov/15514282/</li>
-            </ol>
-          </div>
+        <div class="body">
+        <p>Renowned celebrity doctor, Dr. Julian Ross, has just revealed in an exclusive interview on the Better Health program the "Turmeric Trick," used by Hollywood's biggest stars to melt stubborn fat and reduce bloating, thus achieving a flat belly before major movie premieres.</p>
+        <p>According to Dr. Ross, recent studies show that weight gain is not predominantly caused by genetics, age, or slow metabolism, but rather by cells that cause fat molecules to swell, leading to bloating, lethargy, rapid fat gain, and a drop in libido.</p>
+        <p>The good news is that this "Turmeric Trick" fights inflammation and forces the body to reduce both swelling and fat cells, providing almost daily visible results in weight loss— all without the need for diets, surgeries, or risky cosmetic procedures.</p>
+        <p>More potent than the well-known "Ozempic," the turmeric trick is up to three times more effective and has no side effects because it is 100% natural. It is ideal for men and women who have little free time, including busy mothers who are frustrated with conventional diets and ineffective exercises.</p>
+        <p>Having helped over 34,000 people lose weight and achieve a healthy, naturally slim body, Dr. Julian Ross invites you to watch this exclusive interview while it's still available.</p>
+        <p>Don’t miss this opportunity, especially with the potential pharmaceutical industry intervention, which sees this trick as a direct competitor to Ozempic. Click the button below to access the video now and discover how to take back control of your health and achieve a body that will be the envy of many in just a few weeks.</p>
+        <div class="img-container">
+            <a href="meulink">
+                <img src="img/thumb.gif" alt="thumb">
+            </a>
         </div>
-      </div>
+        <div class="img-container">
+            <a href="meulink" class="button">CLICK TO WATCH THE INTERVIEW</a>
+        </div>
+     </div>
     </div>
     <footer>
-      <div class="footer-content">
-        <p>Copyright 2024 – All rights reserved</p>
-        <a href="terms.html">Terms of use</a> | <a href="privacy.html">Privacy Policy</a> | <a href="disclaimer.html">Disclaimer</a>
-        <p>This website is not part of Google, Inc. or Google.com, nor is it sponsored or endorsed by Google. YouTube is a registered trademark of Google, Inc.
-          Disclaimer: This site is provided for educational purposes only. Please consult a healthcare professional before implementing any strategies discussed on this website.
-        </p>
-      </div>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+                <a href="#email">Email Newsletters</a>
+                <a href="#videos">Videos</a>
+            </div>
+            <div>
+                <div>FOLLOW US</div>
+                <div class="social-icons">
+                    <i class="fab fa-facebook-f social-icon"></i>
+                    <i class="fab fa-twitter social-icon"></i>
+                    <i class="fab fa-instagram social-icon"></i>
+                </div>
+            </div>
+        </div>
     </footer>
-    <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          const elementoContador = document.getElementById('contador');
-          const elementoMensagem = document.getElementById('mensagem');
-          let vagas = 487; // Início com 487 vagas
-          const maxVagas = 500; // Número máximo de vagas
-          let reducoesFeitas = 0; // Controla a quantidade de vezes que a contagem foi reduzida
-          const maxReducoes = Math.floor(Math.random() * 3) + 1; // Número máximo de reduções entre 1 e 3
-      
-          function atualizarContador() {
-              if (vagas < maxVagas) {
-                  // Define quando diminuir uma vaga de forma aleatória
-                  if (reducoesFeitas < maxReducoes && (Math.random() < 0.1)) { // 10% de chance de reduzir a cada atualização
-                      vagas--; // Decrementa vagas
-                      reducoesFeitas++; // Incrementa o número de reduções feitas
-                  } else if (vagas < maxVagas) {
-                      vagas++; // Incrementa vagas
-                  }
-                  elementoContador.textContent = vagas;
-              }
-      
-              if (vagas < maxVagas) {
-                  setTimeout(atualizarContador, Math.random() * 1500 + 2000); // Aumenta o intervalo para dar aspecto de incremento gradual e lento
-              } else {
-                  elementoContador.style.color = '#d00'; // Muda a cor para vermelho uma vez que atinge 500
-                  elementoMensagem.textContent = 'Maximum capacity! Stay here, your access is assured.';
-                  elementoMensagem.style.opacity = '1'; // Torna a mensagem visível
-              }
-          }
-          atualizarContador(); // Iniciar o processo
-      });
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let counterElement = document.getElementById('counter');
+            let count = 52;
+
+            function decreaseCounter() {
+                if (count > 0) {
+                    let decrement = Math.floor(Math.random() * 4) + 1; // Entre 1 e 4
+                    let delay = Math.floor(Math.random() * 11000) + 10000; // Entre 10,000ms (10s) e 20,000ms (20s)
+                    
+                    count -= decrement;
+                    if (count < 0) count = 0; // Evitar contador negativo
+
+                    counterElement.textContent = count;
+
+                    setTimeout(decreaseCounter, delay);
+                }
+            }
+
+            setTimeout(decreaseCounter, 30000); // Começar após 30,000ms (30s)
+        });
     </script>
-    <script type="text/javascript" src="https://dr.naturallife.blog/track.js?rtkcmpid=669c2ef9e912870001987360"></script>
-  </body>
+
+</body>
+
 </html>

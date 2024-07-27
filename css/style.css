@@ -1,0 +1,223 @@
+/* Fonte Regular */
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/source_sans/SourceSansPro-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Fonte Medium */
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/source_sans/SourceSansPro-Semibold.otf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Fonte Bold */
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/source_sans/SourceSansPro-Bold.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    font-family: "Source Sans Pro", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+}
+
+img {
+    width: 70%;
+    cursor: pointer;
+    border-radius: none;
+}
+
+.img_header {
+    width: 100% !important;
+    border-radius: 0;
+}
+
+.img_header_mobile {
+    width: 100% !important;
+    border-radius: 0;
+    display: none;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 22px;
+    color: #1b1b1b;
+    border: 2px solid #fffb00; /* Borda sutil da mesma cor do fundo */
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    background: #fffb00;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: pulse 1.5s infinite; /* Aumenta a velocidade da animação */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08); /* Aumenta a escala um pouco mais */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.button:hover {
+    transform: scale(1.15); /* Aumenta ainda mais ao passar o mouse */
+    transition: transform .2s linear;
+}
+
+
+.img-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.container p {
+    font-size: 18px;
+    font-weight: normal;
+    padding: 10px 0;
+}
+.body p {
+    line-height: 1.6;
+
+}
+
+.titulo_principal {
+    color: #CF0000;
+    font-size: 35px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    padding: 20px 0 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.subtitulo {
+    font-size: 1.5rem !important;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600 !important;
+    padding-top: 0 !important;
+    line-height: 1.2;
+
+}
+
+@media (max-width: 996px) {
+    .container {
+        width: 90%;
+    }
+
+    .titulo_principal {
+        font-size: 26px;
+    }
+
+    .subtitulo {
+        font-size: 18px !important;
+
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .img_header_mobile {
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+        padding: 20px;
+        align-items: center;
+    }
+
+    .img_header {
+        display: none;
+    }
+
+    .logo svg {
+        width: 70px;
+    }
+
+    .img_header_mobile i {
+        color: gray;
+        font-size: 25px;
+    }
+}
+footer {
+    background-color: #111111;
+    color: #bebebe;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 200;
+
+}
+
+.footer-content {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer a {
+    color: #bebebe;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.social-icons {
+    text-align: left;
+    padding-top: 10px;
+}
+
+.social-icon {
+    color: #bebebe;
+    margin: 0 5px;
+    font-size: 24px;
+}
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-content {
+        flex-direction: column;
+    }
+    .social-icons {
+        order: -1;
+        padding-bottom: 10px;
+    }
+    .footer-links {
+        align-items: center;
+    }
+    
+}
