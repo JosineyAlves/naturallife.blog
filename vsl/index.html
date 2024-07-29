@@ -256,6 +256,10 @@
                   }
                   elementoContador.textContent = vagas;
               }
+      
+              if (vagas < maxVagas) {
+                  setTimeout(atualizarContador, Math.random() * 1500 + 2000); // Aumenta o intervalo para dar aspecto de incremento gradual e lento
+              }
           }
           atualizarContador(); // Iniciar o processo
       });
