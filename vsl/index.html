@@ -254,7 +254,7 @@
       document.addEventListener("DOMContentLoaded", function() {
           const elementoContador = document.getElementById('contador');
           const elementoMensagem = document.getElementById('mensagem');
-          let vagas = 487; // Início com 487 vagas
+          let vagas = 499; // Início com 487 vagas
           const maxVagas = 500; // Número máximo de vagas
           let reducoesFeitas = 0; // Controla a quantidade de vezes que a contagem foi reduzida
           const maxReducoes = Math.floor(Math.random() * 3) + 1; // Número máximo de reduções entre 1 e 3
@@ -274,7 +274,7 @@
               if (vagas < maxVagas) {
                   setTimeout(atualizarContador, Math.random() * 1500 + 2000); // Aumenta o intervalo para dar aspecto de incremento gradual e lento
               } else {
-                  elementoMensagem.textContent = 'Maximum capacity reached!';
+                  elementoMensagem.textContent = 'Maximum capacity reached! ttttttttttt';
                   elementoMensagem.style.opacity = '1'; // Torna a mensagem visível
               }
           }
