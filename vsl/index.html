@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natural Life</title>
+    <title>Turmeric Hack</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -71,7 +71,7 @@
       font-weight: 700;
       }
       .mensagem {
-      font-size: 14px;
+      font-size: 16px;
       opacity: 0;
       color: #fff;
       background-color: #D0021B;
@@ -81,6 +81,7 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       line-height: 1.2;
       text-align: center;
+      border-radius: 15px;
       }
       .references-container {
       width: 100%;
@@ -273,8 +274,7 @@
               if (vagas < maxVagas) {
                   setTimeout(atualizarContador, Math.random() * 1500 + 2000); // Aumenta o intervalo para dar aspecto de incremento gradual e lento
               } else {
-                  elementoContador.style.color = '#d00'; // Muda a cor para vermelho uma vez que atinge 500
-                  elementoMensagem.textContent = 'Maximum capacity! Stay here, your access is assured.';
+                  elementoMensagem.textContent = 'Maximum capacity reached!';
                   elementoMensagem.style.opacity = '1'; // Torna a mensagem visível
               }
           }
