@@ -230,7 +230,7 @@ footer {
     border: 2px solid #FFA500; /* Borda laranja */
     border-radius: 8px; /* Bordas arredondadas */
     padding: 10px 50px; /* Espaçamento interno */
-    font-size: 18px; /* Tamanho do texto */
+    font-size: 20px; /* Tamanho do texto */
     font-weight: bold; /* Texto em negrito */
     cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
     margin-top: 5px;

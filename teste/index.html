@@ -38,8 +38,15 @@
       </div>
       </div>
       <div class="headline">
-         <img src="headline.png" alt="Reference 1">
-      </div>
+         <picture>
+             <!-- Imagem para desktop -->
+             <source srcset="headline.png" media="(min-width: 768px)">
+             <!-- Imagem para mobile -->
+             <source srcset="headline-mobile.png" media="(max-width: 767px)">
+             <!-- Fallback para navegadores que não suportam <picture> -->
+             <img src="headline.png" alt="Reference 1">
+         </picture>
+     </div>
       <div class="container">
          <!-- VTurb -->
          <div id="vid_66a6f097c95515000c71877c" style="position:relative;width:100%;padding: 56.25% 0 0;">
@@ -103,7 +110,7 @@
       <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
       <script src="script.js"></script>
       <script type="text/javascript" src="https://dr.naturallife.blog/track.js?rtkcmpid=66a710ee8253c90001d20b62"></script>
-      <style>.esconde { display: none }</style>
+      <style>.esconder { display: none }</style>
 
       <script type="text/javascript">
       document.addEventListener("DOMContentLoaded", function() {
