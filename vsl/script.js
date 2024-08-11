@@ -69,4 +69,6 @@ function updateStockCount() {
     }
 }
 
-setInterval(updateStockCount, 5000); // Diminui o estoque a cada 5 segundos
+function startStockCountdown() {
+    setInterval(updateStockCount, 5000); // Diminui o estoque a cada 5 segundos
+}
