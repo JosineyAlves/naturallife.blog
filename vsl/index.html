@@ -1,269 +1,162 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turmeric Hack</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="preload" href="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/66a6f097c95515000c71877c/player.js" as="script">
-    <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
-    <link rel="preload" href="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/66a6f097c95515000c71877c/thumbnail.jpg" as="image">
-    <link rel="preload" href="https://cdn.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/66a6f085b8e8e6000b6ef500/main.m3u8" as="fetch">
-    <link rel="dns-prefetch" href="https://cdn.converteai.net">
-    <link rel="dns-prefetch" href="https://scripts.converteai.net">
-    <link rel="dns-prefetch" href="https://images.converteai.net">
-    <link rel="dns-prefetch" href="https://api.vturb.com.br">
-    <style>
-      body {
-      font-family: 'Roboto', serif;
-      background-color: #779947;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      margin: 0;
-      }
-      .container {
-      width: 80%;
-      max-width: 900px;
-      text-align: center;
-      margin-bottom: 40px;
-      }
-      .headline {
-      width: 100%; /* Define a largura da div 'headline' */
-      text-align: center; /* Centraliza o conteúdo */
-      margin-bottom: 20px; /* Espaço abaixo da div */
-      }
-      .headline img {
-      width: 80%; /* Define a largura da imagem dentro da div 'headline' */
-      height: auto; /* Mantém a proporção da imagem */
-      }
-      .acessos {
-      max-width: 800px;
-      font-size: 18px;
-      color: #fff;
-      display: flex;
-      align-items: baseline;
-      margin-top: 5px;
-      font-weight: bold;
-      }
-      .label-acessos {
-      margin-right: 5px;
-      }
-      .live-indicator {
-    width: 10px;
-    height: 10px;
-    background-color: #D0021B;
-    border-radius: 50%;
-    margin-left: 5px;
-    animation: blink-animation 1s steps(5, start) infinite;
-      }
-      @keyframes blink-animation {
-      50% { opacity: 0; }
-      }
-      .contador {
-      font-size: 16px;
-      color: #fff;
-      transition: color 0.3s ease;
-      font-weight: 700;
-      }
-      .references-container {
-      width: 100%;
-      background-color: #fff;
-      padding: 0;
-      color: #1F1F1F;
-      text-align: center;
-      }
-      .references {
-      width: 95%;
-      max-width: 800px;
-      margin: 0 auto;
-      }
-      .references h2 {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      }
-      .references .images {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      }
-      .references .images img {
-      max-width: 100%;
-      height: auto;
-      }
-      .study-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      }
-      .study-list .column {
-      flex: 1;
-      min-width: 250px;
-      max-width: 400px;
-      box-sizing: border-box;
-      padding: 0 10px;
-      }
-      .study-list li {
-      color: #929292;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 10px;
-      text-align: left;
-      font-size: 12px;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      word-break: break-word; /* Ensures long words break within the column */
-      }
-      footer {
-      width: 100%;
-      background-color: #F7F7F7;
-      padding: 40px 0;
-      color: #929292;
-      }
-      .footer-content {
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      font-size: 12px;
-      }
-      .footer-content a {
-      color: #929292;
-      text-decoration: none;
-      margin: 0 5px;
-      }
-      .footer-content p {
-      margin: 10px 0;
-      }
-      /* Media queries for smaller devices */
-      @media (max-width: 600px) {
-      .container, .footer-content, .references {
-      width: 95%;
-      max-width: none;
-      }
-      .headline img {
-      width: 95%;
-      }
-      body {
-      padding-top: 20px;
-      }
-      .references .images {
-      flex-direction: column;
-      align-items: center;
-      }
-      .study-list {
-      flex-direction: column; /* Stack columns vertically */
-      }
-      .study-list .column {
-      min-width: 100%; /* Ensure columns take full width */
-      padding: 0;
-      }
-      }
-    </style>
-        <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-MX35NJ2W');</script>
-  <!-- End Google Tag Manager -->
-  </head>
-  <body>
-        <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX35NJ2W"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-    <div class="acessos">
-      <span class="label-acessos">Live Views:</span>
-      <div id="contador" class="contador">487</div>
-      <div id="live-indicator" class="live-indicator">
-    </div>
-    </div>
-  </div>
-    <div class="headline">
-    <img src="headline.png" alt="Reference 1">
-    </div>
-    <div class="container">
-        <!-- VTurb -->
-        <div id="vid_66a6f097c95515000c71877c" style="position:relative;width:100%;padding: 56.25% 0 0;"> <img id="thumb_66a6f097c95515000c71877c" src="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/66a6f097c95515000c71877c/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"> <div id="backdrop_66a6f097c95515000c71877c" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div> </div> <script type="text/javascript" id="scr_66a6f097c95515000c71877c"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/66a6f097c95515000c71877c/player.js", s.async=!0,document.head.appendChild(s); </script> <style> .elementor-element:has(#smartplayer) { width: 100%; } </style>      </div>     
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Turmeric Hack</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+      <link rel="preload" href="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/66a6f097c95515000c71877c/player.js" as="script">
+      <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
+      <link rel="preload" href="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/66a6f097c95515000c71877c/thumbnail.jpg" as="image">
+      <link rel="preload" href="https://cdn.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/66a6f085b8e8e6000b6ef500/main.m3u8" as="fetch">
+      <link rel="dns-prefetch" href="https://cdn.converteai.net">
+      <link rel="dns-prefetch" href="https://scripts.converteai.net">
+      <link rel="dns-prefetch" href="https://images.converteai.net">
+      <link rel="dns-prefetch" href="https://api.vturb.com.br">
+      <link rel="stylesheet" href="styles.css">
+      <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+         })(window,document,'script','dataLayer','GTM-MX35NJ2W');
+      </script>
+      <!-- End Google Tag Manager -->
+   </head>
+   <body>
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX35NJ2W"
+         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      <div class="acessos">
+         <span class="label-acessos">Live Views:</span>
+         <div id="contador" class="contador">487</div>
+         <div id="live-indicator" class="live-indicator">
+         </div>
+      </div>
+      </div>
+      <div class="headline">
+         <picture>
+             <!-- Imagem para desktop -->
+             <source srcset="headline.png" media="(min-width: 768px)">
+             <!-- Imagem para mobile -->
+             <source srcset="headline-mobile.png" media="(max-width: 767px)">
+             <!-- Fallback para navegadores que não suportam <picture> -->
+             <img src="headline.png" alt="Reference 1">
+         </picture>
+     </div>
+      <div class="container">
+         <!-- VTurb -->
+         <div id="vid_66a6f097c95515000c71877c" style="position:relative;width:100%;padding: 56.25% 0 0;">
+            <img id="thumb_66a6f097c95515000c71877c" src="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/66a6f097c95515000c71877c/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"> 
+            <div id="backdrop_66a6f097c95515000c71877c" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div>
+         </div>
+         <script type="text/javascript" id="scr_66a6f097c95515000c71877c"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/66a6f097c95515000c71877c/player.js", s.async=!0,document.head.appendChild(s); </script> 
+         <style> .elementor-element:has(#smartplayer) { width: 100%; } </style>
+      </div>
       <!-- VTurb -->
-    <div class="references-container">
-      <div class="references">
-        <h2>Scientific References</h2>
-        <div class="images">
-          <img src="https://i.imgur.com/TdQJnkk.png" alt="Reference 1">
-        </div>
-        <div class="study-list">
-          <div class="column">
-            <ol>
-              <li><b>1. Heart attack warning - the simple test YOU can do at home to reveal your risk</b> https://www.express.co.uk/life-style/health/995242/heart-attack-test-exercise-risk-symptoms-blood-stretch</li>
-              <li><b>2. Magnesium and the inflammatory response: potential physiopathological implications</b> https://www.ncbi.nlm.nih.gov/pubmed/16712775?dopt=Abstract</li>
-              <li><b>3. Low blood mononuclear cell magnesium in intensive cardiac care unit patients</b> https://www.ncbi.nlm.nih.gov/pubmed/3953355?dopt=Abstract</li>
-              <li><b>4. Low Magnesium Linked To Heart Disease</b> https://www.medicalnewstoday.com/articles/255783.php</li>
-              <li><b>5. L-arginine</b> https://www.mayoclinic.org/drugs-supplements-l-arginine/art-20364681</li>
-              <li><b>6. Role of the general base Glu-268 in nitroglycerin bioactivation and superoxide formation by aldehyde dehydrogenase-2</b> https://www.ncbi.nlm.nih.gov/pubmed/19506075</li>
-            </ol>
-          </div>
-          <div class="column">
-            <ol start="7">
-              <li><b>7. Coenzyme Q10 for the treatment of heart failure: a review of the literature</b> https://openheart.bmj.com/content/2/1/e000326</li>
-              <li><b>8. The effect of coenzyme Q10 on morbidity and mortality in chronic heart failure: results from Q-SYMBIO: a randomized double-blind trial</b> https://www.ncbi.nlm.nih.gov/pubmed/25282031</li>
-              <li><b>9. Nattokinase: A Promising Alternative in Prevention and Treatment of Cardiovascular Diseases</b> https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6043915/</li>
-              <li><b>10. Dietary soy and natto intake and cardiovascular disease mortality in Japanese adults: the Takayama study</b> https://www.ncbi.nlm.nih.gov/pubmed/27927636/</li>
-              <li><b>11. Increasing severity of erectile dysfunction is a marker for increasing risk of cardiovascular disease and death</b> https://www.sciencedaily.com/releases/2013/01/130129130945.htm</li>
-              <li><b>12. Dietary intake of menaquinone is associated with a reduced risk of coronary heart disease: the Rotterdam Study</b> https://pubmed.ncbi.nlm.nih.gov/15514282/</li>
-            </ol>
-          </div>
-        </div>
-      </div>
+      <div class="urgencia esconder">
+        <h2>ATTENTION</h2>
+        <h1>Warehouse near <span class="city-name">Your City</span>: only <span id="stock-count">139</span> bottles in stock</h1>
+        <p>Orders for <span class="city-name">Your City</span> completed today will be delivered within <u>72 hours</u>.</p>
+        <a href="https://news.naturallife.blog/click" class="buy-now-link">
+        <button class="buy-now-button">BUY NOW</button>
+        </a>
+
     </div>
-    <footer>
-      <div class="footer-content">
-        <p>Copyright 2024 – All rights reserved</p>
-        <a href="terms.html">Terms of use</a> | <a href="privacy.html">Privacy Policy</a> | <a href="disclaimer.html">Disclaimer</a>
-        <p>This website is not part of Google, Inc. or Google.com, nor is it sponsored or endorsed by Google. YouTube is a registered trademark of Google, Inc.
-          Disclaimer: This site is provided for educational purposes only. Please consult a healthcare professional before implementing any strategies discussed on this website.
-        </p>
+      <div class="references-container">
+         <div class="references">
+            <h2>Scientific References</h2>
+            <div class="images">
+               <img src="https://i.imgur.com/TdQJnkk.png" alt="Reference 1">
+            </div>
+            <div class="study-list">
+               <div class="column">
+                  <ol>
+                     <li><b>1. Heart attack warning - the simple test YOU can do at home to reveal your risk</b> https://www.express.co.uk/life-style/health/995242/heart-attack-test-exercise-risk-symptoms-blood-stretch</li>
+                     <li><b>2. Magnesium and the inflammatory response: potential physiopathological implications</b> https://www.ncbi.nlm.nih.gov/pubmed/16712775?dopt=Abstract</li>
+                     <li><b>3. Low blood mononuclear cell magnesium in intensive cardiac care unit patients</b> https://www.ncbi.nlm.nih.gov/pubmed/3953355?dopt=Abstract</li>
+                     <li><b>4. Low Magnesium Linked To Heart Disease</b> https://www.medicalnewstoday.com/articles/255783.php</li>
+                     <li><b>5. L-arginine</b> https://www.mayoclinic.org/drugs-supplements-l-arginine/art-20364681</li>
+                     <li><b>6. Role of the general base Glu-268 in nitroglycerin bioactivation and superoxide formation by aldehyde dehydrogenase-2</b> https://www.ncbi.nlm.nih.gov/pubmed/19506075</li>
+                  </ol>
+               </div>
+               <div class="column">
+                  <ol start="7">
+                     <li><b>7. Coenzyme Q10 for the treatment of heart failure: a review of the literature</b> https://openheart.bmj.com/content/2/1/e000326</li>
+                     <li><b>8. The effect of coenzyme Q10 on morbidity and mortality in chronic heart failure: results from Q-SYMBIO: a randomized double-blind trial</b> https://www.ncbi.nlm.nih.gov/pubmed/25282031</li>
+                     <li><b>9. Nattokinase: A Promising Alternative in Prevention and Treatment of Cardiovascular Diseases</b> https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6043915/</li>
+                     <li><b>10. Dietary soy and natto intake and cardiovascular disease mortality in Japanese adults: the Takayama study</b> https://www.ncbi.nlm.nih.gov/pubmed/27927636/</li>
+                     <li><b>11. Increasing severity of erectile dysfunction is a marker for increasing risk of cardiovascular disease and death</b> https://www.sciencedaily.com/releases/2013/01/130129130945.htm</li>
+                     <li><b>12. Dietary intake of menaquinone is associated with a reduced risk of coronary heart disease: the Rotterdam Study</b> https://pubmed.ncbi.nlm.nih.gov/15514282/</li>
+                  </ol>
+               </div>
+            </div>
+         </div>
       </div>
-    </footer>
-    <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script>
+      <footer>
+         <div class="footer-content">
+            <p>Copyright 2024 – All rights reserved</p>
+            <a href="terms.html">Terms of use</a> | <a href="privacy.html">Privacy Policy</a> | <a href="disclaimer.html">Disclaimer</a>
+            <p>This website is not part of Google, Inc. or Google.com, nor is it sponsored or endorsed by Google. YouTube is a registered trademark of Google, Inc.
+               Disclaimer: This site is provided for educational purposes only. Please consult a healthcare professional before implementing any strategies discussed on this website.
+            </p>
+         </div>
+      </footer>
+      <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+      <script src="script.js"></script>
+      <script type="text/javascript" src="https://news.naturallife.blog/track.js?rtkcmpid=66adc610fe67f600013d54f1"></script>
+      <style>.esconder { display: none }</style>
+
+      <script type="text/javascript">
       document.addEventListener("DOMContentLoaded", function() {
-          const elementoContador = document.getElementById('contador');
-          let vagas = 487; // Início com 487 vagas
-          const maxVagas = 500; // Número máximo de vagas
-          let reducoesFeitas = 0; // Controla a quantidade de vezes que a contagem foi reduzida
-          const maxReducoes = Math.floor(Math.random() * 3) + 1; // Número máximo de reduções entre 1 e 3
-      
-          function atualizarContador() {
-              if (vagas < maxVagas) {
-                  // Define quando diminuir uma vaga de forma aleatória
-                  if (reducoesFeitas < maxReducoes && (Math.random() < 0.1)) { // 10% de chance de reduzir a cada atualização
-                      vagas--; // Decrementa vagas
-                      reducoesFeitas++; // Incrementa o número de reduções feitas
-                  } else if (vagas < maxVagas) {
-                      vagas++; // Incrementa vagas
-                  }
-                  elementoContador.textContent = vagas;
-              }
-      
-              if (vagas < maxVagas) {
-                  setTimeout(atualizarContador, Math.random() * 1500 + 2000); // Aumenta o intervalo para dar aspecto de incremento gradual e lento
-              }
-          }
-          atualizarContador(); // Iniciar o processo
+      /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+      var SECONDS_TO_DISPLAY = 2150;
+      var CLASS_TO_DISPLAY = ".esconder";
+      /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
+      var attempts = 0;
+      var elsHiddenList = [];
+      var elsDisplayed = false;
+      var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+      var alreadyDisplayedKey = "alreadyElsDisplayed" + SECONDS_TO_DISPLAY;
+      var alreadyElsDisplayed = null;
+      try {
+          alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
+      } catch(e) {
+          console.warn('Failed to read data from localStorage: ', e);
+      }
+      setTimeout(function () { elsHiddenList = Array.prototype.slice.call(elsHidden); }, 0);
+      var showHiddenElements = function () {
+      elsDisplayed = true;
+      elsHiddenList.forEach((e) => e.style.display = "block");
+      try {
+        localStorage.setItem(alreadyDisplayedKey, true);
+      } catch (e) {
+        console.warn('Failed to save data in localStorage: ', e);
+      }
+      }
+      var startWatchVideoProgress = function () {
+      if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
+      if (attempts >= 10) return;
+      attempts += 1;
+      return setTimeout(function () { startWatchVideoProgress() }, 1000);
+      }
+      smartplayer.instances[0].on('timeupdate', () => {
+      if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+      if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+      showHiddenElements();
+      })
+      }
+      if (alreadyElsDisplayed === 'true') {
+      setTimeout(function () { showHiddenElements(); }, 100);
+      } else {
+      startWatchVideoProgress()
+      }
       });
-    </script>
-    <script type="text/javascript" src="https://news.naturallife.blog/track.js?rtkcmpid=66adc610fe67f600013d54f1"></script>
-  </body>
+      </script>
+   </body>
 </html>
