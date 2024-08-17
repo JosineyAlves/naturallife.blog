@@ -53,11 +53,11 @@ const reductionValues = [6, 3, 2];
 let reductionIndex = 0;
 
 function updateStockCount() {
-    if (stockCount > 6) {
+    if (stockCount > 22) {
         const nextReduction = reductionValues[reductionIndex];
         // Verifica se a próxima redução levará o estoque abaixo de 6
-        if (stockCount - nextReduction <= 6) {
-            stockCount = 6;
+        if (stockCount - nextReduction <= 22) {
+            stockCount = 22;
         } else {
             stockCount -= nextReduction;
         }
@@ -70,5 +70,5 @@ function updateStockCount() {
 }
 
 function startStockCountdown() {
-    setInterval(updateStockCount, 5000); // Diminui o estoque a cada 5 segundos
+    setInterval(updateStockCount, 8000); // Diminui o estoque a cada 8 segundos
 }
