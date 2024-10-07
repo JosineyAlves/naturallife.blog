@@ -96,7 +96,7 @@ footer {
 	margin-top: 50px;
     align-items: center;
     text-align: center;
-    width: 80%;
+    width: 90%;
 }
 
 .urgency-alert h1,
@@ -150,6 +150,7 @@ footer {
     margin: 20px auto;
     max-width: 800px;
     background-color: #fff;
+	width: 90%;
 }
 
 .testimonial-header {
