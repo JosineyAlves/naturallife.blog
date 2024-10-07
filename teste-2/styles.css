@@ -32,21 +32,6 @@ body {
 	/* Mantém a proporção da imagem */
 }
 
-.acessos {
-	max-width: 800px;
-	font-size: 18px;
-	color: #fff;
-	display: flex;
-	align-items: baseline;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	font-weight: bold;
-}
-
-.label-acessos {
-	margin-right: 5px;
-}
-
 .live-indicator {
 	width: 10px;
 	height: 10px;
@@ -192,7 +177,7 @@ footer {
 
 .urgencia {
 	background-color: #ffffff;
-    border: 8px solid #FFC107;
+    border: 4px solid #FFC107;
 	padding: 10px;
 	border-radius: 20px;
 	max-width: 600px;
