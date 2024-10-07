@@ -17,7 +17,7 @@ body {
 }
 
 .headline {
-	width: 80%;
+	width: 100%;
 	/* Define a largura da div 'headline' */
 	text-align: center;
 	/* Centraliza o conteúdo */
@@ -30,6 +30,21 @@ body {
 	/* Define a largura da imagem dentro da div 'headline' */
 	height: auto;
 	/* Mantém a proporção da imagem */
+}
+
+.acessos {
+	max-width: 800px;
+	font-size: 18px;
+	color: #fff;
+	display: flex;
+	align-items: baseline;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.label-acessos {
+	margin-right: 5px;
 }
 
 .live-indicator {
@@ -177,34 +192,32 @@ footer {
 
 .urgencia {
 	background-color: #ffffff;
-	border: 4px solid #FFC107;
+    border: 8px solid #FFC107;
 	padding: 10px;
 	border-radius: 20px;
 	max-width: 600px;
 	margin: 0 auto;
-	margin-bottom: 50px;
-	align-items: center;
-	text-align: center;
-	width: 80%;
+    margin-bottom: 50px;
+    align-items: center;
+    text-align: center;
+    width: 80%;
 }
 
 .urgencia h1 {
 	color: #000000;
 	margin-bottom: 10px;
-	font-size: 24px;
-	font-weight: 900;
+    font-size: 24px;
+    font-weight: 900;
 }
-
 .urgencia H2 {
-	color: #d30000;
+    color: #d30000;
 	font-size: 28px;
-	font-weight: 900;
+    font-weight: 900;
 }
-
 .urgencia p {
 	font-size: 18px;
 	margin-bottom: 10px;
-	font-weight: 600;
+    font-weight: 600;
 }
 
 #stock-count {
@@ -212,163 +225,16 @@ footer {
 	color: #d30000;
 	font-size: 24px;
 }
-
 .buy-now-button {
-	background-color: #FFD700;
-	/* Cor amarelo ouro */
-	color: #000;
-	/* Cor do texto preto */
-	border: 2px solid #FFA500;
-	/* Borda laranja */
-	border-radius: 8px;
-	/* Bordas arredondadas */
-	padding: 10px 50px;
-	/* Espaçamento interno */
-	font-size: 20px;
-	/* Tamanho do texto */
-	font-weight: bold;
-	/* Texto em negrito */
-	cursor: pointer;
-	/* Cursor de ponteiro ao passar o mouse */
-	margin-top: 5px;
-	font-weight: 900;
+    background-color: #FFD700; /* Cor amarelo ouro */
+    color: #000; /* Cor do texto preto */
+    border: 2px solid #FFA500; /* Borda laranja */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 10px 50px; /* Espaçamento interno */
+    font-size: 20px; /* Tamanho do texto */
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    margin-top: 5px;
+    font-weight: 900;
 }
 
-.testimonials-container {
-	font-family: 'Roboto', sans-serif;
-	width: 100%;
-	margin: 0 auto;
-	/* Garante que não haja margens adicionais afetando a largura */
-	background-color: #f9f9f9;
-	/* Aplica o background em toda a largura */
-}
-
-.testimonial {
-	border: 1px solid #ddd;
-	padding: 20px;
-	margin: 20px auto;
-	/* Margem superior e inferior, centralizado horizontalmente */
-	max-width: 800px;
-	/* Limita a largura máxima a 800px */
-	background-color: #fff;
-	/* Background específico para cada testimonial, se desejado diferente do container */
-}
-
-.testimonial-header {
-	display: flex;
-	align-items: center;
-	margin-bottom: 15px;
-}
-
-.customer-avatar {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	margin-right: 10px;
-}
-
-.customer-name {
-	font-weight: bold;
-}
-
-.purchase-date {
-	font-size: 12px;
-	color: #666;
-	margin-top: 10px;
-}
-
-.rating {
-	display: flex;
-	align-items: center;
-	/* This ensures vertical alignment in the middle */
-	margin-bottom: 5px;
-}
-
-.stars {
-	display: flex;
-	/* Makes sure stars are in a row and aligned */
-	margin-right: 5px;
-}
-
-.star {
-	display: inline-block;
-	/* This ensures that stars are laid out inline */
-	color: #DE7921;
-	font-size: 25px;
-	/* Adjust size as needed */
-}
-
-.rating-title {
-	font-weight: bold;
-	/* Bold title */
-	margin-left: 5px;
-	/* Space between stars and the title */
-}
-
-.star,
-.rating-title {
-	line-height: 0.3;
-	/* Ensures that extra line height does not affect alignment */
-	vertical-align: middle;
-	/* Additional alignment help */
-}
-
-.verified-purchase {
-	font-size: 12px;
-	color: #c45500;
-	margin-bottom: 10px;
-	margin-top: 5px;
-	font-weight: 600;
-}
-
-.testimonial-content {
-	display: flex;
-	align-items: flex-start;
-	/* Aligns content at the top */
-}
-
-.testimonial-image {
-	width: 100px;
-	height: auto;
-	/* Adjusts height automatically to maintain aspect ratio */
-	object-fit: cover;
-	margin-right: 10px;
-}
-
-.testimonial-text {
-	font-size: 14px;
-	color: #555;
-}
-
-
-hr {
-	border: none;
-	height: 1px;
-	background-color: #ccc;
-	/* Gray color for the separator */
-	margin: 20px 0;
-	/* Adds space around the separator */
-}
-
-@media (max-width: 768px) {
-
-	.testimonial-image {
-		width: 80px;
-		/* Smaller image on mobile */
-	}
-
-	.testimonial {
-		padding: 10px;
-		/* Less padding on mobile */
-	}
-
-	.stars {
-		justify-content: center;
-		/* Center stars on mobile if needed */
-	}
-
-	.testimonial-text {
-		font-size: 12px;
-		/* Smaller text on mobile */
-	}
-}
