@@ -10,11 +10,11 @@ body {
     margin: 0;
 }
 
-.container {
-    width: 80%;
+.content-container {
+    width: 95%;
     max-width: 900px;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .headline {
@@ -93,7 +93,6 @@ footer {
     border-radius: 20px;
     max-width: 600px;
     margin: 0 auto 50px;
-	margin-top: 50px;
     align-items: center;
     text-align: center;
     width: 90%;
@@ -196,6 +195,7 @@ footer {
 .rating-title {
     font-weight: bold;
     margin-left: 5px;
+	font-
 }
 
 .star,
