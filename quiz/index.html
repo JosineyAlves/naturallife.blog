@@ -116,17 +116,18 @@
           }
           
       }
-      function trackQuizProgress(step) {
-  if (window.gtag) {
-  gtag('event', 'quiz_progression', {
-      'event_category': 'Quiz',
-      'event_label': 'Step ' + step,
-      'value': step
-  });
-  }
-  }
-  
-      
+function trackQuizProgress(step) {
+    if (window.gtag) {
+        gtag('event', 'quiz_progression', {
+            'event_category': 'Quiz',
+            'event_label': 'Step ' + step,
+            'value': step
+        });
+    } else {
+        console.log('Google Analytics gtag.js not loaded');
+    }
+}
+     
   
       function updateProgressBar() {
           var progressBar = document.getElementById('progress-bar');
