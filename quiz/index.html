@@ -97,54 +97,67 @@
     </div>
 </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var currentStep = 1;
-            var maxSteps = 5;
-        
-            function showNextStep() {
-                var currentQuiz = document.getElementById('quiz' + currentStep);
-                var nextQuiz = document.getElementById('quiz' + (currentStep + 1));
-                if (currentQuiz && nextQuiz) {
-                    currentQuiz.style.display = 'none';
-                    nextQuiz.style.display = 'block';
-                    currentStep++;
-                    updateProgressBar();
-                } else if (!nextQuiz && currentStep === maxSteps) {
-                    showModal();
-                }
-            }
-        
-            function updateProgressBar() {
-                var progressBar = document.getElementById('progress-bar');
-                var progressPercentage = (currentStep / maxSteps) * 100;
-                progressBar.style.width = progressPercentage + '%';
-            }
-        
-            function showModal() {
-                var modal = document.getElementById('myModal');
-                var span = document.getElementsByClassName("close")[0];
-                modal.style.display = "block";
-                span.onclick = function() {
-                    modal.style.display = "none";
-                }
-                window.onclick = function(event) {
-                    if (event.target === modal) {
-                        modal.style.display = "none";
-                    }
-                }
-            }
-        
-            document.querySelectorAll('.quiz-option a').forEach(function(option) {
-                option.addEventListener('click', function() {
-                    showNextStep();
-                });
-            });
-        
-            updateProgressBar();  // Atualiza a barra de progresso inicialmente
-        });
-        </script>
-        
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var currentStep = 1;
+      var maxSteps = 5;
+              
+      function showNextStep() {
+          var currentQuiz = document.getElementById('quiz' + currentStep);
+          var nextQuiz = document.getElementById('quiz' + (currentStep + 1));
+          if (currentQuiz && nextQuiz) {
+              currentQuiz.style.display = 'none';
+              nextQuiz.style.display = 'block';
+              currentStep++;
+              updateProgressBar();
+              trackQuizProgress(currentStep);  // Adiciona o rastreamento de evento aqui
+          } else if (!nextQuiz && currentStep === maxSteps) {
+              showModal();
+          }
+          
+      }
+      function trackQuizProgress(step) {
+  if (window.gtag) {
+  gtag('event', 'quiz_progression', {
+      'event_category': 'Quiz',
+      'event_label': 'Step ' + step,
+      'value': step
+  });
+  }
+  }
+  
+      
+  
+      function updateProgressBar() {
+          var progressBar = document.getElementById('progress-bar');
+          var progressPercentage = (currentStep / maxSteps) * 100;
+          progressBar.style.width = progressPercentage + '%';
+      }
+  
+      function showModal() {
+          var modal = document.getElementById('myModal');
+          var span = document.getElementsByClassName("close")[0];
+          modal.style.display = "block";
+          span.onclick = function() {
+              modal.style.display = "none";
+          }
+          window.onclick = function(event) {
+              if (event.target === modal) {
+                  modal.style.display = "none";
+              }
+          }
+      }
+  
+      document.querySelectorAll('.quiz-option a').forEach(function(option) {
+          option.addEventListener('click', function() {
+              showNextStep();
+          });
+      });
+  
+      updateProgressBar();  // Atualiza a barra de progresso inicialmente
+  });
+         
+</script>        
 
 </body>
 
