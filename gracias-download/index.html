@@ -70,7 +70,7 @@
             max-height: 50%;
         }
     </style>
-<!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
 <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -95,6 +95,17 @@
             })(window,document,'script','dataLayer','GTM-M426LZ5W');
          </script>
          <!-- End Google Tag Manager -->
+            <script>
+          window.onload = function () {
+              var links = document.getElementsByTagName("a");
+              for (var i = 0, n = links.length; i < n; i++) {
+                  var href = links[i].href.trim() +
+                          (links[i].href.indexOf("?") > 0 ? '&' : '?') +
+                          document.location.search.replace('?', '').toString();
+                  links[i].href = href;
+              }
+          }
+      </script>
 </head>
 
 <body>
