@@ -19,7 +19,7 @@ body {
     padding: 10px;
 }
 .container p{
-    font-size: 16px ;
+    font-size: 18px ;
     font-weight: 400;
     text-align: center;
 }
@@ -42,13 +42,13 @@ h2 {
     font-size: 18px;
     text-align: center;
     margin-bottom: 20px;
-    font-weight: 800;
+    font-weight: 700;
     text-transform:uppercase
 }
 h3 {
     font-size: 18px;
     text-align: center;
-    font-weight: 800;
+    font-weight: 700;
     text-transform:uppercase;
 }
 
@@ -235,6 +235,7 @@ a {
     display: flex;
     align-items:normal;
     font-size: 16px;
+    font-weight: 500;
   }
 
   .check-icon {
@@ -341,7 +342,7 @@ a {
     font-size: 14px !important;
     color: #001c22;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 10px;
     padding: 5px;
     border-radius: 5px;
