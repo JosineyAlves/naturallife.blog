@@ -589,7 +589,8 @@ small {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: fit-content; 
+  width:80%; 
+  max-width: 400px;
 }
 
 /* Tornando o bloco flutuante (ajuste se já tem esse CSS) */
