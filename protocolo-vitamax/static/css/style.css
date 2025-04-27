@@ -216,6 +216,7 @@ img {
 
 .vitamax-images img {
   width: 80%;
+  max-width: 150px;
   height: auto;
   border-radius: 10px;
   margin-bottom: -15px;
