@@ -371,7 +371,7 @@ img {
 .title-depoimentos {
   font-size: 26px;
   font-weight: 800;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   color: #ffffff;
 }
 
@@ -389,12 +389,26 @@ img {
   display: block;
 }
 
-.testimonial-slide img {
-  max-width: 350px;
-  height: auto;
-  margin: 0 auto;
-  border-radius: 8px;
+.testimonial-text p {
+  font-size: 18px;
+  font-style: italic;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
+
+.rating {
+  font-size: 20px;
+  color: #FFD700; /* amarelo dourado para as estrelas */
+  margin-bottom: 5px;
+}
+
+small {
+  display: block;
+  font-size: 16px;
+  color: #CCCCCC;
+  margin-top: 5px;
+}
+
 
 /*--------------------------------------*/
 /* Oferta                               */
