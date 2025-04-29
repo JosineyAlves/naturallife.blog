@@ -6,6 +6,17 @@
     <title>Protocolo Vitamax</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="static/css/style.css" />
+                  <script>
+          window.onload = function () {
+              var links = document.getElementsByTagName("a");
+              for (var i = 0, n = links.length; i < n; i++) {
+                  var href = links[i].href.trim() +
+                          (links[i].href.indexOf("?") > 0 ? '&' : '?') +
+                          document.location.search.replace('?', '').toString();
+                  links[i].href = href;
+              }
+          }
+      </script>
     <!-- Meta Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s)
