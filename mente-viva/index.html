@@ -66,6 +66,7 @@
       font-size: 18px;
       color: #004c5e;
       line-height: 1.5;
+      margin-top: 40px;
     }
 
     .credencial strong {
@@ -83,6 +84,39 @@
       }
     }
   </style>
+      <!-- Meta Pixel Code -->
+      <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '125413300567612');
+        fbq('track', 'PageView');
+      </script>
+      <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=125413300567612&ev=PageView&noscript=1"
+        /></noscript>
+      <!-- End Meta Pixel Code -->
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-WV5NJ4GPD4"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-WV5NJ4GPD4');
+      </script>
+      <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "rbhywygwoo");
+  </script>
 </head>
 
 <body>
@@ -99,11 +133,86 @@
     <div class="video-container">
       <div id="vid_68183674f51bc30eacdde264" style="position: relative; width: 100%; padding: 56.25% 0 0;"> <img id="thumb_68183674f51bc30eacdde264" src="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/68183674f51bc30eacdde264/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_68183674f51bc30eacdde264" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_68183674f51bc30eacdde264"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/68183674f51bc30eacdde264/player.js", s.async=!0,document.head.appendChild(s); </script>
     </div>
+    <!-- HOTMART - Sales Funnel Widget -->
+    <!--- sales funnel container --->
+    <div  class="esconder" id="hotmart-sales-funnel"></div>
 
+    <!--- script load and setup --->
+    <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+    <script>
+    checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+    </script>
+    <!-- HOTMART - Sales Funnel Widget -->
+    
     <div class="credencial">
       El <strong>Instituto Vitamax</strong> es uno de los principales centros de investigación natural en salud auditiva, especializado en la recuperación contra el zumbido en los oídos y la pérdida de audición. Con miles de clientes satisfechos en todo el mundo, nuestro compromiso es ofrecer soluciones naturales, seguras y comprobadas para restaurar tu calidad de vida.
     </div>
   </div>
+  <style>.esconder { display: none }</style>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+/* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+    var SECONDS_TO_DISPLAY = 235;
+    var CLASS_TO_DISPLAY = ".esconder";
+/* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
+    var EXPIRATION_DAYS = 14;
+    var alreadyDisplayedKey = "alreadyElsDisplayed" + SECONDS_TO_DISPLAY;
+    var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+    var elsDisplayed = false;
+    var attempts = 0;
+
+    class StorageHandler {
+        static expiryTime = EXPIRATION_DAYS * 86400000;
+
+        static set(key, value) {
+            localStorage.setItem(
+                key,
+                JSON.stringify({ value, expiry: Date.now() + this.expiryTime })
+            );
+        }
+
+        static get(key) {
+            var item = localStorage.getItem(key);
+            if (!item) return null;
+
+            var { value, expiry } = JSON.parse(item);
+            if (Date.now() > expiry) {
+                localStorage.removeItem(key);
+                return null;
+            }
+            return value;
+        }
+    }
+
+    var alreadyElsDisplayed = StorageHandler.get(alreadyDisplayedKey);
+
+    var showHiddenElements = function () {
+        elsDisplayed = true;
+        elsHidden.forEach((e) => e.style.display = "block");
+        StorageHandler.set(alreadyDisplayedKey, true);
+    };
+
+    var startWatchVideoProgress = function () {
+        if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
+            if (attempts >= 10) return;
+            attempts++;
+            return setTimeout(startWatchVideoProgress, 1000);
+        }
+        smartplayer.instances[0].on('timeupdate', () => {
+            if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+            if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+            showHiddenElements();
+        });
+    };
+
+    if (alreadyElsDisplayed) {
+        setTimeout(showHiddenElements, 100);
+    } else {
+        startWatchVideoProgress();
+    }
+});
+</script>
 
 </body>
 
