@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico Personalizado · Instituto Vitamax</title>
+    <!-- Fontes + CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script>
+      window.onload = function () {
+          var links = document.getElementsByTagName("a");
+          for (var i = 0, n = links.length; i < n; i++) {
+              var href = links[i].href.trim() +
+                      (links[i].href.indexOf("?") > 0 ? '&' : '?') +
+                      document.location.search.replace('?', '').toString();
+              links[i].href = href;
+          }
+      }
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '125413300567612');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=125413300567612&ev=PageView&noscript=1"
+      /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WV5NJ4GPD4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'G-WV5NJ4GPD4');
+    </script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "rbhywygwoo");
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Logo + progresso -->
+      <div class="logo-container">
+        <img src="static/images/logo.webp" alt="Instituto Vitamax" class="logo">
+      </div>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <!-- ================== QUIZ PASOS 1 – 25 ================== -->
+      <!-- ---------- PASO 1 ---------- -->
+      <div id="quiz1" class="quiz-container">
+        <h2>¿Cuántos años tienes?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Menos de 30</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>30–39 años</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>40–49 años</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>50–59 años</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>60+</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 2 ---------- -->
+      <div id="quiz2" class="quiz-container" style="display:none">
+        <h2>¿Escuchas sonidos como pitidos, zumbidos o pulsaciones en los oídos?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, constantemente</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, a veces</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Ya lo sentí, pero desapareció</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Nunca lo sentí</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 3 ---------- -->
+      <div id="quiz3" class="quiz-container" style="display:none">
+        <h3>No estás solo...</h3>
+        <p>Puede que pienses que solo te pasa a ti… Pero la verdad es que millones de personas sufren con ese sonido invisible.
+          El zumbido afecta silenciosamente la vida social, el sueño y hasta la salud mental.
+        </p>
+        <p>No estás solo — y lo más importante: <b>esto tiene solución.</b></p>
+        <div class="image-container">
+          <img src="static/images/etapa-3.png" alt="Ilustración" class="quiz-image">
+        </div>
+        <div class="centralized-button">
+          <button class="single-button">¡ENTENDIDO!</button>
+        </div>
+      </div>
+      <!-- ---------- PASO 4 ---------- -->
+      <div id="quiz4" class="quiz-container" style="display:none">
+        <h2>¿Hace cuánto tiempo convives con ese sonido?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Menos de 1 mes</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>1 a 6 meses</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>6 meses a 1 año</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Más de 1 año</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 5 ---------- -->
+      <div id="quiz5" class="quiz-container" style="display:none">
+        <h2>¿Ese sonido afecta tu sueño o tu capacidad de concentrarte?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, interfiere mucho</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, interfiere un poco</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>No interfiere</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>No estoy seguro</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 6 ---------- -->
+      <div id="quiz6" class="quiz-container" style="display:none">
+        <h3>La causa podría estar en los medicamentos</h3>
+        <div class="quiz-video-wrapper">
+         <div id="vid_681fa4bf4b17c4455d4df7ea" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0;"> <img id="thumb_681fa4bf4b17c4455d4df7ea" src="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/681fa4bf4b17c4455d4df7ea/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_681fa4bf4b17c4455d4df7ea" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_681fa4bf4b17c4455d4df7ea"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/681fa4bf4b17c4455d4df7ea/player.js", s.async=!0,document.head.appendChild(s); </script>
+        </div>
+        <div class="centralized-button">
+          <button class="single-button">¡ENTENDIDO!</button>
+        </div>
+      </div>
+      <!-- ---------- PASO 7 ---------- -->
+      <div id="quiz7" class="quiz-container" style="display:none">
+        <h2>¿Usas medicamentos con frecuencia?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, todos los días</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, de vez en cuando</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Raramente</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Nunca</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 8 ---------- -->
+      <div id="quiz8" class="quiz-container" style="display:none">
+        <h2>¿Has tomado antibióticos, aspirina o antialérgicos en los últimos meses?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>No</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>No recuerdo</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 9 ---------- -->
+      <div id="quiz9" class="quiz-container" style="display:none">
+        <h2>¿Sufres de mareos, dolores de cabeza o estrés constante?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, frecuentemente</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, a veces</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Raramente</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Nunca</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 10 ---------- -->
+      <div id="quiz10" class="quiz-container" style="display:none">
+        <h3>Tóxicos silenciosos: el enemigo invisible detrás del tinnitus</h3>
+        <div class="quiz-video-wrapper">
+        <div id="vid_681fa4a0e3b3cfc4a1394083" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0;"> <img id="thumb_681fa4a0e3b3cfc4a1394083" src="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/681fa4a0e3b3cfc4a1394083/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_681fa4a0e3b3cfc4a1394083" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_681fa4a0e3b3cfc4a1394083"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/681fa4a0e3b3cfc4a1394083/player.js", s.async=!0,document.head.appendChild(s); </script>        </div>
+        <div class="centralized-button">
+          <button class="single-button">¡ENTENDIDO!</button>
+        </div>
+      </div>
+      <!-- ---------- PASO 11 ---------- -->
+      <div id="quiz11" class="quiz-container" style="display:none">
+        <h2>¿Te has hecho alguna prueba auditiva en los últimos años?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, recientemente</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, hace tiempo</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>No, nunca me la hice</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 12 ---------- -->
+      <div id="quiz12" class="quiz-container" style="display:none">
+        <h2>¿Algún médico te dijo que no había nada físicamente mal con tu oído?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, más de uno</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, solo uno</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>No, siempre encontraron algo</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Nunca fui al médico</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 13 ---------- -->
+      <div id="quiz13" class="quiz-container" style="display:none">
+        <h2>¿Cómo ha afectado esto tu vida personal o familiar?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Me alejó de las personas</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Siento vergüenza al pedir que repitan las cosas</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>He perdido calidad de vida</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>No ha afectado mucho</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 14 ---------- -->
+      <div id="quiz14" class="quiz-container" style="display:none">
+        <h2>¿Has probado audífonos, terapia sonora, medicamentos o soluciones naturales?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, varias de ellas</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, pero sin resultados</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Pensé en intentar, pero no lo hice</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>No, nunca intenté</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 15 ---------- -->
+      <div id="quiz15" class="quiz-container" style="display:none">
+        <h2>¿Cómo te sientes al haber intentado todo sin resultados duraderos?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Cansado(a) y frustrado(a)</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Aún tengo esperanza</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Estoy desilusionado(a)</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Nunca busqué soluciones</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 16 ---------- -->
+      <div id="quiz16" class="quiz-container" style="display:none">
+        <h2>¿Has notado dificultades de memoria o concentración?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, tengo lapsos frecuentes de memoria</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Siento que mi pensamiento está más lento</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Un poco, pero podría ser cansancio</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>No he notado nada diferente</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 17 ---------- -->
+      <div id="quiz17" class="quiz-container" style="display:none">
+        <h3>¿LO SABÍAS?</h3>
+        <h2>La raíz del problema puede estar dentro de ti</h2>
+        <div class="quiz-video-wrapper">
+        <div id="vid_681fa4baac7e96c322adca61" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0;"> <img id="thumb_681fa4baac7e96c322adca61" src="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/681fa4baac7e96c322adca61/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_681fa4baac7e96c322adca61" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_681fa4baac7e96c322adca61"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/681fa4baac7e96c322adca61/player.js", s.async=!0,document.head.appendChild(s); </script>
+        </div>
+        <div class="centralized-button">
+          <button class="single-button">¡ENTENDIDO!</button>
+        </div>
+      </div>
+      <!-- ---------- PASO 18 ---------- -->
+      <div id="quiz18" class="quiz-container" style="display:none">
+        <h2>¿Había oído hablar de tratamientos naturales para regenerar la audición y proteger el cerebro?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span> Sí, ya lo conocía</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span> Lo había escuchado, pero no sabía que ayudaba a la audición</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>No, es la primera vez que veo algo así</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 19 ---------- -->
+      <div id="quiz19" class="quiz-container" style="display:none">
+        <h3>¿Cómo esta solución natural puede transformar su audición?</h3>
+        <p>Gracias a su poderosa <b>acción antioxidante y antiinflamatoria</b>, esta combinación natural ofrece beneficios que podrá sentir rápidamente:
+        <div class="highlight-options">
+          <li class="highlight-option"><i class="fa-regular fa-circle-check check-icon"></i> Sonidos más claros y vivos — como el viento, las conversaciones y la música.</pli>
+          <li class="highlight-option"><i class="fa-regular fa-circle-check check-icon"></i> Menor dificultad para comprender en ambientes ruidosos.</li>
+          <li class="highlight-option"><i class="fa-regular fa-circle-check check-icon"></i> Reducción progresiva del zumbido molesto.</li>
+          <li class="highlight-option"><i class="fa-regular fa-circle-check check-icon"></i> Sueño más profundo y sin ruidos internos.</li>
+          <li class="highlight-option"><i class="fa-regular fa-circle-check check-icon"></i> Mayor concentración, energía y claridad mental en el día a día.</li>
+        </div>
+        <p>Esta transformación va más allá de la audición: le devuelve la calidad de vida que el zumbido y la pérdida auditiva le han arrebatado silenciosamente a lo largo de los años.</p>
+        </p>
+        <div class="centralized-button">
+          <button class="single-button">¡ENTENDIDO!</button>
+        </div>
+      </div>
+      <!-- ---------- PASO 20 ---------- -->
+      <div id="quiz20" class="quiz-container" style="display:none">
+        <h2>Conozca el Protocolo Vitamax: Restaure su audición de forma práctica y comprobada</h2>
+        <div class="quiz-video-wrapper">
+        <div id="vid_681fa4baac7e96c322adca61" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0;"> <img id="thumb_681fa4baac7e96c322adca61" src="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/681fa4baac7e96c322adca61/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_681fa4baac7e96c322adca61" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_681fa4baac7e96c322adca61"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/681fa4baac7e96c322adca61/player.js", s.async=!0,document.head.appendChild(s); </script>
+        </div>
+        <div class="centralized-button">
+          <button class="single-button">¡ENTENDIDO!</button>
+        </div>
+      </div>
+      <!-- ---------- PASO 22 ---------- -->
+      <div id="quiz22" class="quiz-container" style="display:none">
+        <h2>¿Estarías dispuesto(a) a dedicar 2 minutos al día para recuperar tu audición?</h2>
+        <ul>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, con seguridad</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>Tal vez, depende de lo que sea</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>No estoy seguro(a)</li>
+          <li class="quiz-option" data-next><span class="selection-circle"></span>No, soy escéptico(a)</li>
+        </ul>
+      </div>
+      <!-- ---------- PASO 23 ---------- -->
+      <div id="quiz23" class="quiz-container" style="display:none">
+        <h2>¿Qué dicen las personas?</h2>
+        <div class="highlight-options">
+          <li class="highlight-option"><em>Marcos P. - "El zumbido desapareció en 2 semanas. Sentí como si quitaran un taladro de mi oído."</em></li>
+          <li class="highlight-option"><em>Ana L. - "Pensé que era normal por la edad... pero ahora escucho hasta el sonido del viento. Gracias, Protocolo Vitamax!"</em></li>
+          <li class="highlight-option"><em>Laura M. - "Pensaba que sería complicado, pero es súper sencillo. Faço em casa enquanto assisto TV. He notado la diferencia en pocas semanas!"</em></li>
+          <li class="highlight-option"><em>Daniel S. - "Lo había probado todo y era escéptico. Pero con el Protocolo Vitamax, ¡mis acúfenos disminuyeron visiblemente en menos de un mes!”</em></li>
+        </div>
+        <div class="centralized-button">
+          <button class="single-button">¡ENTENDIDO!</button>
+        </div>
+      </div>
+      <!-- ---------- PASO 24 (Cargando) ---------- -->
+      <div id="quiz24" class="quiz-container" style="display:none">
+        <h2>Analizando tus respuestas...</h2>
+        <em>Generando un plan personalizado para restaurar tu salud auditiva...</em>
+        <div class="progress-bar-container">
+          <div class="progress-bar-animated" id="animated-progress-bar"></div>
+          <div class="progress-text" id="progress-text">0 %</div>
+        </div>
+      </div>
+      <!-- ---------- PASO 25 (Resultados) ---------- -->
+      <div id="quiz25" class="quiz-container" style="display:none">
+        <h2>DIAGNÓSTICO AUDITIVO: NIVEL DE INTOXICACIÓN</h2>
+        <p>Después de analizar tus respuestas, identificamos un nivel crítico de intoxicación ototóxica en tu sistema auditivo.</p>
+        <img src="static/images/Termometro.png" alt="Termómetro" style="display: block; margin: 20px auto; max-width: 100%; width: 100%; height: auto;" />
+        <p><b>⚠️ Nivel aceptable de toxinas auditivas:</b> hasta 80 puntos<br><b>❌ Tu nivel actual:</b> 280 puntos</p>
+        <p>Esto representa más de 3 veces el límite seguro para el oído humano. No se trata solo de estadísticas, sino de un daño real que ya está comprometiendo tu audición.</p>
+        <!-- Icono 1 -->
+        <div class="result-container bloco-1">
+          <div class="result-header">
+            <div class="icon-container">
+              <img src="static/images/icon-1.png" alt="Icono 1" class="result-icon" />
+            </div>
+            <div class="title-score-container">
+              <h1 class="result-title">Intoxicación Ototóxica</h1>
+              <div class="result-score">9/10</div>
+            </div>
+          </div>
+          <div class="paragraph-list">
+            <p>Tu exposición a medicamentos con sustancias ototóxicas es muy alta. Estas toxinas inflaman el oído interno y endurecen el tímpano, reduciendo drásticamente tu capacidad para captar sonidos con claridad.</p>
+          </div>
+        </div>
+        <!-- Icono 2 -->
+        <div class="result-container bloco-2">
+          <div class="result-header">
+            <div class="icon-container">
+              <img src="static/images/icon-2.png" alt="Icono 2" class="result-icon" />
+            </div>
+            <div class="title-score-container">
+              <h1 class="result-title">Flexibilidad del Tímpano</h1>
+              <div class="result-score">8/10</div>
+            </div>
+          </div>
+          <div class="paragraph-list">
+            <p>Reportaste síntomas como pitidos, silbidos y pérdida auditiva progresiva. Esto indica que tu tímpano ha perdido parte de su elasticidad natural, lo que provoca sonidos distorsionados o apagados.</p>
+          </div>
+        </div>
+        <!-- Icono 3 -->
+        <div class="result-container bloco-3">
+          <div class="result-header">
+            <div class="icon-container">
+              <img src="static/images/icon-3.png" alt="Icono 3" class="result-icon" />
+            </div>
+            <div class="title-score-container">
+              <h1 class="result-title">Estrés Neurológico</h1>
+              <div class="result-score">7/10</div>
+            </div>
+          </div>
+          <div class="paragraph-list">
+            <p>El estrés provocado por el ruido constante pone a tu cerebro en alerta permanente. Esto puede explicar insomnio, ansiedad, irritabilidad, pérdida de memoria y dificultad para concentrarte.</p>
+          </div>
+        </div>
+        <!-- Icono 4 -->
+        <div class="result-container bloco-4">
+          <div class="result-header">
+            <div class="icon-container">
+              <img src="static/images/icon-4.png" alt="Icono 4" class="result-icon" />
+            </div>
+            <div class="title-score-container">
+              <h1 class="result-title">Defensas Auditivas</h1>
+              <div class="result-score">8/10</div>
+            </div>
+          </div>
+          <div class="paragraph-list">
+            <p>Tu sistema inmunológico auditivo está debilitado. En lugar de combatir las toxinas, agrava la inflamación, acelerando la pérdida auditiva y el zumbido constante que experimentas.</p>
+          </div>
+        </div>
+        <h2>ANÁLISIS FINAL:</h2>
+        <p>Su oído sufre a diario ataques invisibles pero extremadamente agresivos. El diagnóstico apunta a una <b>intoxicación avanzada</b>, una inflamación crónica y un riesgo real de pérdida de audición permanente.</p>
+        <p>El zumbido que siente es sólo la punta del iceberg, señal de que el daño interno se encuentra en una fase avanzada.</p>
+        <p>Si no se toman medidas ahora, el riesgo de <b>pérdida de audición permanente, confusión mental y empeoramiento</b> de los síntomas es cada vez mayor.</p>
+        <P>Pero la buena noticia es que aún estás a tiempo de revertirlo, <b>y eso empieza con el siguiente paso</b>.</P>
+        <a href="https://naturallife.blog/protocolo-vitamax/" class="button">RECUPERA TU<br />AUDICIÓN AHORA</a>
+        <h2><em>Conoce la solución natural recomendada por especialistas</em></h2>
+      </div>
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-container">
+          <p>© 2025 Instituto Vitamax – Todos los derechos reservados.</p>
+          <p>contacto@institutovitamax.com</p>
+          <div class="footer-links">
+            <a href="#">Privacidad</a><span>|</span><a href="#">Términos de Uso</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- /.container -->
+    <!-- ================== SCRIPT ================== -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+      
+        const maxSteps = 25;
+        let current    = 1;
+      
+        const qs  = s => document.querySelector(s);
+        const $id = n => document.getElementById('quiz' + n);
+      
+        const show = n => $id(n).style.display = 'block';
+        const hide = n => $id(n).style.display = 'none';
+      
+        const bar = qs('#progress-bar');
+      
+        /* ------------ barra de progreso principal ------------ */
+        const updateBar = () =>
+          bar.style.width = ((current - 1) / (maxSteps - 1)) * 100 + '%';
+      
+        /* ------------ avanzar un paso normal ------------ */
+        const next = () => {
+          if (current >= maxSteps) return;
+          hide(current);
+          show(++current);
+          updateBar();
+        };
+      
+        /* ------------ paso especial (#23 → #24 → #25) ------------ */
+        const loadingStep = () => {
+          hide(current);
+          current++;
+          show(24);          // muestra pantalla de carga
+          updateBar();
+      
+          const barAnim = qs('#animated-progress-bar');
+          const txt     = qs('#progress-text');
+          const dur     = 5000;               // 5 s
+          const t0      = performance.now();
+      
+          (function anim(now) {
+            const p = Math.min(((now - t0) / dur) * 100, 100);
+      
+            barAnim.style.width = p + '%';
+      
+            /* ----------- cambio de texto cuando llega a 100 % ----------- */
+            txt.textContent = (p < 100) ? p.toFixed(0) + ' %' : 'Término';
+      
+            if (p < 100) {
+              requestAnimationFrame(anim);
+            } else {
+              /* pequeña pausa y pasa al paso 25 */
+              setTimeout(() => {
+                hide(24);
+                show(++current);
+                updateBar();
+              }, 800);
+            }
+          })(performance.now());
+        };
+      
+        /* ------------ delegación de clics ------------ */
+        document.body.addEventListener('click', ev => {
+          if (ev.target.closest('.quiz-option')) {          // clic en opción
+            next();
+            return;
+          }
+          if (ev.target.closest('.single-button')) {        // clic en “ENTENDIDO”
+            current === 23 ? loadingStep() : next();
+          }
+        });
+      
+        /* estado inicial */
+        show(1);
+        updateBar();        // barra al 0 %
+      });
+    </script>
+  </body>
+</html>
