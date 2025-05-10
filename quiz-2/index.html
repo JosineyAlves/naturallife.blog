@@ -392,7 +392,7 @@
     <script>
       document.addEventListener('DOMContentLoaded', () => {
       
-        const maxSteps = 25;
+        const maxSteps = 24;
         let current    = 1;
       
         const qs  = s => document.querySelector(s);
@@ -419,7 +419,7 @@
         const loadingStep = () => {
           hide(current);
           current++;
-          show(24);          // muestra pantalla de carga
+          show(23);          // muestra pantalla de carga
           updateBar();
       
           const barAnim = qs('#animated-progress-bar');
@@ -440,7 +440,7 @@
             } else {
               /* pequeña pausa y pasa al paso 25 */
               setTimeout(() => {
-                hide(24);
+                hide(23);
                 show(++current);
                 updateBar();
               }, 800);
@@ -455,7 +455,7 @@
             return;
           }
           if (ev.target.closest('.single-button')) {        // clic en “ENTENDIDO”
-            current === 23 ? loadingStep() : next();
+            current === 22 ? loadingStep() : next();
           }
         });
       
