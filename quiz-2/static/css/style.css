@@ -383,7 +383,7 @@ a {
   .quiz-video-wrapper {
     position: relative;
     width: 90%;
-    max-width: 300px;
+    max-width: 350px;
     margin: 0 auto 20px;
     border-radius: 10px;
   }
